@@ -265,6 +265,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize language
     setLanguage(currentLang);
+
+    // ==========================================
+    // THEME SWITCHER (LIGHT <-> DARK MODE)
+    // ==========================================
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    let currentTheme = localStorage.getItem('portfolio_theme') || 'light';
+
+    function setTheme(theme) {
+        currentTheme = theme;
+        localStorage.setItem('portfolio_theme', theme);
+
+        if (theme === 'dark') {
+            document.body.classList.remove('light-theme');
+            document.body.classList.add('dark-theme');
+        } else {
+            document.body.classList.remove('dark-theme');
+            document.body.classList.add('light-theme');
+        }
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const nextTheme = document.body.classList.contains('dark-theme') ? 'light' : 'dark';
+            setTheme(nextTheme);
+        });
+    }
+
+    // Initialize Theme
+    setTheme(currentTheme);
     
     // ==========================================
     // STICKY HEADER ON SCROLL
