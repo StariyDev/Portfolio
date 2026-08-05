@@ -395,21 +395,11 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(element);
     });
 
-    setTimeout(() => {
-        const heroElements = document.querySelectorAll('.hero-section .fade-in');
-        heroElements.forEach((el, index) => {
-            setTimeout(() => {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            }, index * 150);
-        });
-    }, 100);
-
+    // Ensure Hero section elements render smoothly without blocking visibility
     const heroElements = document.querySelectorAll('.hero-section .fade-in');
-    heroElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(25px)';
-        el.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+    heroElements.forEach((el, index) => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
     });
 
     // ==========================================
