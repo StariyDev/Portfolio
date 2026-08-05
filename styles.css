@@ -127,9 +127,12 @@ img, svg {
 /* Background Glow Spheres */
 .glow-bg {
     position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
@@ -733,9 +736,10 @@ img, svg {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
     gap: 2rem;
     transition: opacity 0.3s ease;
+    width: 100%;
 }
 
 .project-card {
