@@ -883,21 +883,19 @@ img, svg {
     border-radius: 4px;
 }
 
-/* Project Filter Animation Class */
+/* Safe element hiding without WebKit render crashes */
 .project-card.fade-out {
-    opacity: 0;
-    transform: scale(0.9);
-    display: none;
+    display: none !important;
 }
 
 .project-card.fade-in-item {
-    animation: zoomIn 0.4s forwards;
+    animation: fadeInSafe 0.3s ease-out forwards;
 }
 
-@keyframes zoomIn {
+@keyframes fadeInSafe {
     from {
         opacity: 0;
-        transform: scale(0.92);
+        transform: scale(0.96);
     }
     to {
         opacity: 1;
