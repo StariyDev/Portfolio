@@ -223,7 +223,7 @@ img, svg {
 }
 
 .btn-secondary {
-    background: #FFFFFF;
+    background: var(--bg-surface);
     color: var(--color-text-primary);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
@@ -231,7 +231,7 @@ img, svg {
 
 .btn-secondary:hover {
     background: var(--bg-surface-hover);
-    border-color: #cbd5e1;
+    border-color: var(--accent-primary);
     transform: translateY(-2px);
 }
 
@@ -441,7 +441,7 @@ body.dark-theme .sun-icon { display: block; color: #F59E0B; }
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    background: #ECFDF5;
+    background: var(--accent-primary-glow);
     border: 1px solid rgba(16, 185, 129, 0.25);
     padding: 0.4rem 1rem;
     border-radius: 30px;
@@ -466,7 +466,7 @@ body.dark-theme .sun-icon { display: block; color: #F59E0B; }
 .badge-text {
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--accent-secondary);
+    color: var(--accent-primary);
 }
 
 .hero-title {
@@ -518,7 +518,7 @@ body.dark-theme .sun-icon { display: block; color: #F59E0B; }
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: #FFFFFF;
+    background: var(--bg-surface);
     border: 1px solid var(--border-color);
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
